@@ -18,7 +18,7 @@ public class Graf extends JPanel {
 		
 		//Asignación de valores provisional, esto se debe obtener automaticamente
 		prob.clear();
-		prob.add(1.0);
+		prob.add(0.60);
 		prob.add(0.25);
 		prob.add(0.33);
 		prob.add(0.10);
