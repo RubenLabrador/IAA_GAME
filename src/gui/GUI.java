@@ -25,11 +25,8 @@ public class GUI extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(new GridLayout(2, 0, 0, 0));
-		
 		Graf graf = new Graf();
-		OptionsPanel options = new OptionsPanel();
 		contentPane.add(graf);
-		//contentPane.add(options);
 	}
 
 }

@@ -7,7 +7,7 @@ public class Test {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					GUI frame = new GUI();
+					GUI frame = new OptionsPanel();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
