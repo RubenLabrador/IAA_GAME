@@ -4,8 +4,8 @@ package Main;
 
 import java.awt.EventQueue;
 
-import GUI_.GUI;
-import GUI_.OptionsPanel;
+import GUI.GUI;
+import GUI.OptionsPanel;
 
 public class Main {
 	public static void main(String[] args) {

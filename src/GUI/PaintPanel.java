@@ -1,4 +1,4 @@
-package GUI_;
+package GUI;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -7,7 +7,7 @@ import java.util.Collections;
 
 import javax.swing.JPanel;
 
-public class Graf extends JPanel {
+public class PaintPanel extends JPanel {
 	private ArrayList<Double> prob = new ArrayList<Double>();
 	
 	public void setProbs(ArrayList<Double> probs){

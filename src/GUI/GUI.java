@@ -1,4 +1,4 @@
-package GUI_;
+package GUI;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -25,7 +25,7 @@ public class GUI extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(new GridLayout(2, 0, 0, 0));
-		Graf graf = new Graf();
+		PaintPanel graf = new PaintPanel();
 		contentPane.add(graf);
 	}
 
