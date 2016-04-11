@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.GridLayout;
 
 import javax.swing.ButtonGroup;
+import javax.swing.ButtonModel;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
@@ -26,36 +27,43 @@ public class OptionsPanel extends GUI {
 	  JRadioButton bajoVida = new JRadioButton("Bajo");
 	  nivelVida.add(altoVida);
 	  nivelVida.add(bajoVida);
+	  altoVida.setSelected(true);
 
 	  JRadioButton armado = new JRadioButton("Armado");
 	  JRadioButton desarmado = new JRadioButton("Desarmado");
 	  nivelArmas.add(armado);
 	  nivelArmas.add(desarmado);
+	  armado.setSelected(true);
 
 	  JRadioButton armadoOp = new JRadioButton("Armado");
 	  JRadioButton desarmadoOp = new JRadioButton("Desarmado");
     nivelArmasOponente.add(armadoOp);
     nivelArmasOponente.add(desarmadoOp);
+    armadoOp.setSelected(true);
     
     JRadioButton muchos = new JRadioButton("Muchos");
     JRadioButton pocos = new JRadioButton("Pocos");
     enemigosCerca.add(muchos);
     enemigosCerca.add(pocos);
+    muchos.setSelected(true);
     
     JRadioButton siSonido = new JRadioButton ("Sí");
     JRadioButton noSonido = new JRadioButton ("No");
     sonido.add(siSonido);
     sonido.add(noSonido);
+    siSonido.setSelected(true);
     
     JRadioButton siArmaCerca = new JRadioButton ("Sí");
     JRadioButton noArmaCerca = new JRadioButton ("No");
     armaCercana.add(siArmaCerca );
     armaCercana.add(noArmaCerca );
+    siArmaCerca.setSelected(true);
     
     JRadioButton siVidaCerca = new JRadioButton ("Sí");
     JRadioButton noVidaCerca = new JRadioButton ("No");
     vidaCercana.add(siVidaCerca );
     vidaCercana.add(noVidaCerca );
+    siVidaCerca.setSelected(true);
     
     JRadioButton atacar = new JRadioButton ("Atacar");
     JRadioButton buscarArmas = new JRadioButton ("Buscar Armas");
@@ -69,6 +77,7 @@ public class OptionsPanel extends GUI {
     accionS0.add(explorar);
     accionS0.add(huir);
     accionS0.add(detectarPeligro);
+    atacar.setSelected(true);
     
     panel.setLayout(new GridLayout(1,5,1,1));
     JPanel subPanelA = new JPanel();
