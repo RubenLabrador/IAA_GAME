@@ -21,7 +21,7 @@ public class API_help {
 		try {
 			new Environ (null);
 			// Read in the net created by the BuildNet.java example program.
-			Streamer stream = new Streamer ("C:/Users/Dru/Desktop/IAA/java/IAA_GAME/src/gui/Juego.neta");
+			Streamer stream = new Streamer ("C:/Users/Dru/Desktop/IAA/java/IAA_GAME/src/Juego.neta");
 			net = new Net (stream);
 			
 			// Obtenemos cada nodo
@@ -56,34 +56,42 @@ public class API_help {
 	}
 	
 	public void S_state (String str) throws NeticaException {
+		S.finding().clear();
 		S.finding().enterState(str);
 	}
 	
 	public void HN_state (String str) throws NeticaException {
+		HN.finding().clear();
 		HN.finding().enterState(str);
 	}
 	
 	public void PW_state (String str) throws NeticaException {
+		PW.finding().clear();
 		PW.finding().enterState(str);
 	}
 	
 	public void H_state (String str) throws NeticaException {
+		H.finding().clear();
 		H.finding().enterState(str);
 	}
 	
 	public void W_state (String str) throws NeticaException {
+		W.finding().clear();
 		W.finding().enterState(str);
 	}
 	
 	public void OW_state (String str) throws NeticaException {
+		OW.finding().clear();
 		OW.finding().enterState(str);
 	}
 	
 	public void NE_state (String str) throws NeticaException {
+		NE.finding().clear();
 		NE.finding().enterState(str);
 	}
 	
 	public void PH_state (String str) throws NeticaException {
+		PH.finding().clear();
 		PH.finding().enterState(str);
 	}
 	

@@ -4,18 +4,20 @@ import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.border.LineBorder;
 import javax.swing.border.TitledBorder;
+import Utils.API_help;
+import norsys.netica.NeticaException;
 
 public class OptionsPanel extends GUI {
-	/**
-	 * 
-	 */
+	API_help apiH = new API_help();
+	JRadioButton altoVida;
+	JRadioButton bajoVida;
+	
 	private static final long serialVersionUID = 1L;
 	private JPanel panel = new JPanel();
 	public OptionsPanel () {
@@ -28,58 +30,44 @@ public class OptionsPanel extends GUI {
 	  ButtonGroup vidaCercana = new ButtonGroup();           //PH
 	  ButtonGroup accionS0 = new ButtonGroup();              //St
 	  
-	  JRadioButton altoVida = new JRadioButton("Alto");
-	  JRadioButton bajoVida = new JRadioButton("Bajo");
-	  altoVida.addActionListener(new ButtonListener());
-	  bajoVida.addActionListener(new ButtonListener());
+	  altoVida = new JRadioButton("Alto");
+	  bajoVida = new JRadioButton("Bajo");
 	  nivelVida.add(altoVida);
 	  nivelVida.add(bajoVida);
 	  altoVida.setSelected(true);
 
 	  JRadioButton armado = new JRadioButton("Armado");
 	  JRadioButton desarmado = new JRadioButton("Desarmado");
-	  armado.addActionListener(new ButtonListener());
-	  desarmado.addActionListener(new ButtonListener());
 	  nivelArmas.add(armado);
 	  nivelArmas.add(desarmado);
 	  armado.setSelected(true);
 
 	  JRadioButton armadoOp = new JRadioButton("Armado");
 	  JRadioButton desarmadoOp = new JRadioButton("Desarmado");
-	  armadoOp.addActionListener(new ButtonListener());
-	  desarmadoOp.addActionListener(new ButtonListener());
     nivelArmasOponente.add(armadoOp);
     nivelArmasOponente.add(desarmadoOp);
     armadoOp.setSelected(true);
     
     JRadioButton muchos = new JRadioButton("Muchos");
     JRadioButton pocos = new JRadioButton("Pocos");
-    muchos.addActionListener(new ButtonListener());
-    pocos.addActionListener(new ButtonListener());
     enemigosCerca.add(muchos);
     enemigosCerca.add(pocos);
     muchos.setSelected(true);
     
     JRadioButton siSonido = new JRadioButton ("Si");
     JRadioButton noSonido = new JRadioButton ("No");
-    siSonido.addActionListener(new ButtonListener());
-    noSonido.addActionListener(new ButtonListener());
     sonido.add(siSonido);
     sonido.add(noSonido);
     siSonido.setSelected(true);
     
     JRadioButton siArmaCerca = new JRadioButton ("Si");
     JRadioButton noArmaCerca = new JRadioButton ("No");
-    siArmaCerca.addActionListener(new ButtonListener());
-    noArmaCerca.addActionListener(new ButtonListener());
     armaCercana.add(siArmaCerca );
     armaCercana.add(noArmaCerca );
     siArmaCerca.setSelected(true);
     
     JRadioButton siVidaCerca = new JRadioButton ("Si");
     JRadioButton noVidaCerca = new JRadioButton ("No");
-    siVidaCerca.addActionListener(new ButtonListener());
-    noVidaCerca.addActionListener(new ButtonListener());
     vidaCercana.add(siVidaCerca );
     vidaCercana.add(noVidaCerca );
     siVidaCerca.setSelected(true);
@@ -90,12 +78,6 @@ public class OptionsPanel extends GUI {
     JRadioButton explorar = new JRadioButton ("Explorar");
     JRadioButton huir = new JRadioButton ("Atacar");
     JRadioButton detectarPeligro = new JRadioButton ("Buscar Armas");
-    atacar.addActionListener(new ButtonListener());
-    buscarArmas.addActionListener(new ButtonListener());
-    buscarEnergia.addActionListener(new ButtonListener());
-    explorar.addActionListener(new ButtonListener());
-    huir.addActionListener(new ButtonListener());
-    detectarPeligro.addActionListener(new ButtonListener());
     accionS0.add(atacar);
     accionS0.add(buscarArmas);
     accionS0.add(buscarEnergia);
@@ -173,7 +155,6 @@ public class OptionsPanel extends GUI {
     subPanelE2.setLayout(new GridLayout(1,1,1,1));
     subPanelE2.setBorder(new LineBorder(Color.BLACK));
     JButton calcular = new JButton("Calcular");
-    calcular.addActionListener(new ButtonListener());
     calcular.setVerticalAlignment(JButton.CENTER);
     subPanelE2.add(calcular);
     subPanelE.add(subPanelE2);
@@ -185,13 +166,62 @@ public class OptionsPanel extends GUI {
     panel.add(subPanelE);
     add(panel);
     
-    
+    altoVida.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+        	try {
+				apiH.H_state("Alto");
+				System.out.println("NIVEL DE VIDA - Alto");
+			} catch (NeticaException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+        }
+    });
+	
+	bajoVida.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+        	try {
+				apiH.H_state("Bajo");
+				System.out.println("NIVEL DE VIDA - Bajo");
+			} catch (NeticaException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+        }
+    });
+	
+	armado.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+        	try {
+				apiH.W_state("Armado");
+				System.out.println("NIVEL DE ARMAS - Armado");
+			} catch (NeticaException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+        }
+    });
+	
+	desarmado.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+        	try {
+				apiH.W_state("Desarmado");
+				System.out.println("NIVEL DE ARMAS - Desarmado");
+			} catch (NeticaException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+        }
+    });
+	
 	}
 	
-	protected class ButtonListener implements ActionListener {
-    public void actionPerformed(ActionEvent e) {
-      
-    }
-	}
 	
+
+	
+
 }

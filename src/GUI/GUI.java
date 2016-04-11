@@ -1,19 +1,11 @@
 package GUI;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
+import java.awt.GridLayout;
+import java.util.Hashtable;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import java.awt.GridLayout;
-import java.util.Hashtable;
-import java.awt.FlowLayout;
-import javax.swing.JLabel;
-import javax.swing.JToggleButton;
-import javax.swing.JRadioButton;
-import javax.swing.ButtonGroup;
-import javax.swing.JComboBox;
 
 public class GUI extends JFrame {
 
