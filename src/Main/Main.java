@@ -1,8 +1,13 @@
-package gui;
+package Main;
+
+
 
 import java.awt.EventQueue;
 
-public class Test {
+import GUI_.GUI;
+import GUI_.OptionsPanel;
+
+public class Main {
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {

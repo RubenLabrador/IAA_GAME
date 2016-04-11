@@ -1,4 +1,4 @@
-package gui;
+package GUI_;
 
 import java.awt.Color;
 import java.awt.GridLayout;
@@ -11,8 +11,12 @@ import javax.swing.border.LineBorder;
 import javax.swing.border.TitledBorder;
 
 public class OptionsPanel extends GUI {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel panel = new JPanel();
-	OptionsPanel () {
+	public OptionsPanel () {
 	  ButtonGroup nivelVida = new ButtonGroup();             //H
 	  ButtonGroup nivelArmas = new ButtonGroup();            //W
 	  ButtonGroup nivelArmasOponente = new ButtonGroup();    //OW
@@ -42,17 +46,17 @@ public class OptionsPanel extends GUI {
     enemigosCerca.add(muchos);
     enemigosCerca.add(pocos);
     
-    JRadioButton siSonido = new JRadioButton ("Sí");
+    JRadioButton siSonido = new JRadioButton ("Si");
     JRadioButton noSonido = new JRadioButton ("No");
     sonido.add(siSonido);
     sonido.add(noSonido);
     
-    JRadioButton siArmaCerca = new JRadioButton ("Sí");
+    JRadioButton siArmaCerca = new JRadioButton ("Si");
     JRadioButton noArmaCerca = new JRadioButton ("No");
     armaCercana.add(siArmaCerca );
     armaCercana.add(noArmaCerca );
     
-    JRadioButton siVidaCerca = new JRadioButton ("Sí");
+    JRadioButton siVidaCerca = new JRadioButton ("Si");
     JRadioButton noVidaCerca = new JRadioButton ("No");
     vidaCercana.add(siVidaCerca );
     vidaCercana.add(noVidaCerca );
