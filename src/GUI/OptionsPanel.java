@@ -30,42 +30,56 @@ public class OptionsPanel extends GUI {
 	  
 	  JRadioButton altoVida = new JRadioButton("Alto");
 	  JRadioButton bajoVida = new JRadioButton("Bajo");
+	  altoVida.addActionListener(new ButtonListener());
+	  bajoVida.addActionListener(new ButtonListener());
 	  nivelVida.add(altoVida);
 	  nivelVida.add(bajoVida);
 	  altoVida.setSelected(true);
 
 	  JRadioButton armado = new JRadioButton("Armado");
 	  JRadioButton desarmado = new JRadioButton("Desarmado");
+	  armado.addActionListener(new ButtonListener());
+	  desarmado.addActionListener(new ButtonListener());
 	  nivelArmas.add(armado);
 	  nivelArmas.add(desarmado);
 	  armado.setSelected(true);
 
 	  JRadioButton armadoOp = new JRadioButton("Armado");
 	  JRadioButton desarmadoOp = new JRadioButton("Desarmado");
+	  armadoOp.addActionListener(new ButtonListener());
+	  desarmadoOp.addActionListener(new ButtonListener());
     nivelArmasOponente.add(armadoOp);
     nivelArmasOponente.add(desarmadoOp);
     armadoOp.setSelected(true);
     
     JRadioButton muchos = new JRadioButton("Muchos");
     JRadioButton pocos = new JRadioButton("Pocos");
+    muchos.addActionListener(new ButtonListener());
+    pocos.addActionListener(new ButtonListener());
     enemigosCerca.add(muchos);
     enemigosCerca.add(pocos);
     muchos.setSelected(true);
     
     JRadioButton siSonido = new JRadioButton ("Si");
     JRadioButton noSonido = new JRadioButton ("No");
+    siSonido.addActionListener(new ButtonListener());
+    noSonido.addActionListener(new ButtonListener());
     sonido.add(siSonido);
     sonido.add(noSonido);
     siSonido.setSelected(true);
     
     JRadioButton siArmaCerca = new JRadioButton ("Si");
     JRadioButton noArmaCerca = new JRadioButton ("No");
+    siArmaCerca.addActionListener(new ButtonListener());
+    noArmaCerca.addActionListener(new ButtonListener());
     armaCercana.add(siArmaCerca );
     armaCercana.add(noArmaCerca );
     siArmaCerca.setSelected(true);
     
     JRadioButton siVidaCerca = new JRadioButton ("Si");
     JRadioButton noVidaCerca = new JRadioButton ("No");
+    siVidaCerca.addActionListener(new ButtonListener());
+    noVidaCerca.addActionListener(new ButtonListener());
     vidaCercana.add(siVidaCerca );
     vidaCercana.add(noVidaCerca );
     siVidaCerca.setSelected(true);
@@ -76,6 +90,12 @@ public class OptionsPanel extends GUI {
     JRadioButton explorar = new JRadioButton ("Explorar");
     JRadioButton huir = new JRadioButton ("Atacar");
     JRadioButton detectarPeligro = new JRadioButton ("Buscar Armas");
+    atacar.addActionListener(new ButtonListener());
+    buscarArmas.addActionListener(new ButtonListener());
+    buscarEnergia.addActionListener(new ButtonListener());
+    explorar.addActionListener(new ButtonListener());
+    huir.addActionListener(new ButtonListener());
+    detectarPeligro.addActionListener(new ButtonListener());
     accionS0.add(atacar);
     accionS0.add(buscarArmas);
     accionS0.add(buscarEnergia);
@@ -164,6 +184,8 @@ public class OptionsPanel extends GUI {
     panel.add(subPanelD);
     panel.add(subPanelE);
     add(panel);
+    
+    
 	}
 	
 	protected class ButtonListener implements ActionListener {
