@@ -7,6 +7,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import java.awt.GridLayout;
+import java.util.Hashtable;
 import java.awt.FlowLayout;
 import javax.swing.JLabel;
 import javax.swing.JToggleButton;
@@ -17,6 +18,7 @@ import javax.swing.JComboBox;
 public class GUI extends JFrame {
 
 	private JPanel contentPane;
+	private PaintPanel graf = new PaintPanel();
 
 	public GUI() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -25,8 +27,9 @@ public class GUI extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(new GridLayout(2, 0, 0, 0));
-		PaintPanel graf = new PaintPanel();
 		contentPane.add(graf);
 	}
-
+	public void setProb(Hashtable<String, Double> prob) {
+    graf.setProb(prob);
+  }
 }

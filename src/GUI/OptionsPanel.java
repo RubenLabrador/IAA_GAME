@@ -2,6 +2,8 @@ package GUI;
 
 import java.awt.Color;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
@@ -151,6 +153,7 @@ public class OptionsPanel extends GUI {
     subPanelE2.setLayout(new GridLayout(1,1,1,1));
     subPanelE2.setBorder(new LineBorder(Color.BLACK));
     JButton calcular = new JButton("Calcular");
+    calcular.addActionListener(new ButtonListener());
     calcular.setVerticalAlignment(JButton.CENTER);
     subPanelE2.add(calcular);
     subPanelE.add(subPanelE2);
@@ -161,11 +164,12 @@ public class OptionsPanel extends GUI {
     panel.add(subPanelD);
     panel.add(subPanelE);
     add(panel);
-    
-    
-
 	}
 	
+	protected class ButtonListener implements ActionListener {
+    public void actionPerformed(ActionEvent e) {
+      
+    }
+	}
 	
-
 }
