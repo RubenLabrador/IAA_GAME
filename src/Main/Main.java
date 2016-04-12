@@ -1,7 +1,5 @@
 package Main;
 
-
-
 import java.awt.EventQueue;
 
 import GUI.GUI;

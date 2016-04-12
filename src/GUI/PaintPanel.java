@@ -9,27 +9,20 @@ import java.util.Hashtable;
 import javax.swing.JPanel;
 
 public class PaintPanel extends JPanel {
-	private Hashtable<String,Double> prob = new Hashtable<String,Double>();
+	public static Hashtable<String,Double> prob = new Hashtable<String,Double>();
 	
+	public Hashtable<String, Double> getProb() {
+		return prob;
+	}
+
 	public void setProb(Hashtable<String, Double> prob) {
-    this.prob = prob;
-  }
+		this.prob = prob;
+	}
 	
 	public void paintComponent (Graphics g){
-		
-		//Asignación de valores provisional, esto se debe obtener automaticamente
-		/**
-	  prob.clear();
-		prob.add(0.60);
-		prob.add(0.25);
-		prob.add(0.33);
-		prob.add(0.10);
-		prob.add(0.17);
-		prob.add(0.28);
-		**/
 		draw (g);
-		
 	}
+	
 	private void draw (Graphics g){
 		//double probmax = Collections.max(prob);
 		int i = 0;
@@ -39,11 +32,7 @@ public class PaintPanel extends JPanel {
 			int anchura = this.getWidth()-100;
 			int xpos = 50+(((int)(anchura/6)*i));
 			int ypos = (int)(base-(altura*prob.get(accion)));
-			//if (prob. == probmax){
-				//g.setColor(Color.BLUE);
-			//}else{
-				g.setColor(Color.RED);
-			//}
+			g.setColor(Color.BLUE);
 			g.fillRect(xpos, ypos, (int)((anchura/6)-10),(int) (altura * prob.get(accion)));
 			g.setColor(Color.BLACK);
 			g.drawString("" + prob.get(accion), xpos, ypos-10);
